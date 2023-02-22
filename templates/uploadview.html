@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <style>
+        body{
+        background-image: url('/static/bg.jpg')
+        }
+        td{
+        color: white;
+        }
+        a:link{
+        color:red;
+        }
+        a:visited{
+        color:green;
+        }
+        table{
+        padding: 10px;
+        margin: auto;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <table class="table table bordered">
+        <tr>
+            <td>TITLE</td>
+            <td>AUTHOR</td>
+            <td>PDF</td>
+        </tr>
+            {% for i in books %}
+        <tr>
+            <td style="padding:20px;">{{i.title}}</td>
+            <td style="padding:20px;">{{i.author}}</td>
+            <td style="padding:20px;"><a href="{{i.pdf.url}}">download</a></td>
+            <td style="padding:20px;"><a href="{% url 'delete_book' i.pk %}">Delete</a></td>
+            <td style="padding:20px;"><a href="{% url 'view_book' i.pk %}">View</a></td>
+            <td style="padding:20px;"><a href="{% url 'edit_book' i.pk %}">Edit</a></td>
+
+            {% if i.cover %}
+            <td><img src="{{i.cover.url}}" alt="cover image" style="width:70px;">
+            {% else %}
+            <p>No cover image</p>
+            {% endif %}
+            </td>
+            {% endfor %}
+        </tr>
+
+
+    </table>
+</div>
+</body>
+</html>

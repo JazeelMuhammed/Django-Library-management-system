@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<style>
+    div{
+    padding: 100px;
+    text-align: center;
+    }
+</style>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="{% static '.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<div>
+    <button type="submit" class="btn btn-lg"><a href="{% url 'uploadbook' %}">Upload Books</a></button>
+</div><br><br>
+<div>
+    <button type="submit" class="btn btn-lg"><a href="{% url 'uploadview' %}">View Books</a></button>
+</div>
+</body>
+</html>

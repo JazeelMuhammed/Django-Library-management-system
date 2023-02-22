@@ -1,0 +1,15 @@
+body {
+background-image: url('/static/sample.png');
+height: auto;
+}
+
+h2{
+color: red;
+padding: 5px;
+margin: auto;
+}
+.home{
+background-image: url('/static/joker.jpg');
+}
+
+}

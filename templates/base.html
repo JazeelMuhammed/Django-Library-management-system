@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link type="text/css" rel="stylesheet" href="{% static '.css' %}">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Title</title>
+</head>
+<body>
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <ul class="nav navbar-nav">
+            <li><a href="{% url 'homepage' %}">Home</a></li>
+            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">SignUp</a>
+            <ul class="dropdown-menu">
+                <li><a href="{% url 'teachersignup' %}">Teacher SignUp</a></li>
+                <li><a href="{% url 'studentsignup' %}">Student SignUp</a></li>
+            </ul>
+            </li>
+            <li><a href="{% url 'user_login' %}">Login</a></li>
+
+        </ul>
+    </div>
+</nav>
+{% block content %}
+{% endblock %}
+</body>
+</html>
